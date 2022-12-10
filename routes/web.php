@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\BlogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +16,7 @@ use App\Http\Controllers\ProdukController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('template');
 });
 
 
@@ -30,4 +31,16 @@ Route::prefix('produk')->group(function(){
     Route::put('/update/{id}',[ProdukController::class, "update"])->name("produk.update");
 
     Route::get('/delete/{id}', [ProdukController::class, "delete"]);
+});
+
+Route::prefix('blog')->group(function(){
+    Route::get('/',[BlogController::class, "index"])->name("produk.index");
+    Route::get('/create',[BlogController::class, "create"])->name("blog.create");
+    Route::get('/edit/{id}',[BlogController::class, "edit"])->name("blog.edit");
+
+
+    Route::post('/insert', [BlogController::class, "insert"])->name("blog.insert");
+    Route::put('/update/{id}',[BlogController::class, "update"])->name("blog.update");
+
+    Route::get('/delete/{id}', [BlogController::class, "delete"]);
 });
