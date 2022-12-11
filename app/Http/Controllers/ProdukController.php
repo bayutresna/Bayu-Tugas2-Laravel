@@ -38,9 +38,9 @@ class ProdukController extends Controller
 
         produk::query()->create($payload);
         return redirect('produk');
-    } //page feature
+    }
 
-    //get update
+
     function edit($id){
         $produks =Produk::query()->where('id',$id)->first();
         return view('produk.edit', ['produk'=> $produks]);
@@ -65,7 +65,7 @@ class ProdukController extends Controller
         $produks->save();
         // dd([$path,$path2]);
         return redirect('produk');
-    } //page pricing
+    }
 
     function delete($id){
 
@@ -74,8 +74,5 @@ class ProdukController extends Controller
 
         $delete =  Produk::query()->where("id", $id)->delete();
         return redirect('produk');
-    } //page work
-
-    function review(){
-    } //page review
+    }
 }

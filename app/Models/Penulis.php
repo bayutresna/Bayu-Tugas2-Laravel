@@ -5,15 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Blog extends Model
+class Penulis extends Model
 {
     public $guarded = ["id"];
 
     public $fillable = [
-        'penulis',
-        'judul',
-        'konten',
+        'nama',
+        'username',
+        'password',
         'foto',
     ];
-    protected $table='Blogs';
+    protected $table='Produks';
 }

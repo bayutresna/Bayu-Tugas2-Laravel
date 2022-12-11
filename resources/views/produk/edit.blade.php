@@ -1,12 +1,7 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Input Data</title>
-</head>
-<body>
-
+@extends('template')
+@section('title','Tugas 2 Produk')
+@section('konten_master')
+@parent
 <form action="{{ route('produk.update', ["id" => $produk->id]) }}" method = "post" enctype="multipart/form-data">
     @method("put")
     @csrf
@@ -33,5 +28,4 @@
     <input type="hidden" name="id" value="{{$produk->id}}">
     <button type="submit" @class(["btn", "btn-primary"])>Submit</button>
   </form>
-</body>
-</html>
+@endsection
