@@ -6,7 +6,7 @@
     <div class="konten text-[18px] font-[500] py-[20px]>
         <p class="card-text"><b>Penulis = </b> {{$blog['penulis']}}</p>
         <p class="card-text"> <?php echo substr($blog['konten'],0,50) . "...." ?> </p>
-        <a href=""{{route ('blog.detail',["id" => $blog->id]) }}"" class="card-text"> continue reading.....</a>
+        <a href="{{route ('blog.detail',["id" => $blog->id]) }}" class="card-text"> continue reading.....</a>
     </div>
     <td>
         <!-- <a href="{{route ('blog.detail',["id" => $blog->id]) }}"><button class="btn btn-success">Detail</button></a> -->
