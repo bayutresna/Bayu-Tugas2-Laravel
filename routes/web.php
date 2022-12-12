@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProdukController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,9 +18,10 @@ use App\Http\Controllers\BlogController;
 
 Route::get('/', function () {
     return view('template');
-});
+}) ->name('homepage')->middleware(['withauth']);
 
-
+Route::any('/login', [AuthController::class, 'login']) -> name('login')->middleware(['noauth']);
+Route::any('/logout', [AuthController::class, 'logout']) ->name('logout')->middleware(['withauth']);
 
 Route::prefix('produk')->group(function(){
     Route::get('/',[ProdukController::class, "index"])->name("produk.index");

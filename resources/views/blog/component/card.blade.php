@@ -1,6 +1,6 @@
 
 <div class="card border-[1px] " style="width: 18rem;">
-  <img src="{{ asset($blog['foto']) }}" class="card-img-top" alt="...">
+  <img src="{{ asset($blog['foto']) }}" class="card-img-top img-fluid" alt="...">
   <div class="card-body px-[10px] bg-slate-400/30">
     <h5 class="card-title text-center text-[24px] font-[700] uppercase ">{{$blog['judul']}}</h5>
     <div class="konten text-[18px] font-[500] py-[20px]>
