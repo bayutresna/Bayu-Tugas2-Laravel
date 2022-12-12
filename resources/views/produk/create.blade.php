@@ -14,7 +14,7 @@
   </div>
   <div class="mb-3">
     <label for="harga" class="form-label">Harga Produk</label>
-    <textarea class="form-control" id="harga" name="harga"> </textarea>
+    <input type="text" class="form-control" id="harga" name= "harga">
   </div>
   <div class="mb-3">
     <label for="stok" class="form-label">Banyak Stok</label>
